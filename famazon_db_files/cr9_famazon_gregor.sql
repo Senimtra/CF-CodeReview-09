@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2021 at 07:29 PM
+-- Generation Time: Apr 16, 2021 at 09:35 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -32,7 +32,8 @@ USE `cr9_famazon_gregor`;
 CREATE TABLE `carrier` (
   `carrier_id` int(10) UNSIGNED NOT NULL,
   `carrier_name` varchar(30) DEFAULT NULL,
-  `carrier_address` varchar(50) DEFAULT NULL,
+  `adr_street` varchar(30) DEFAULT NULL,
+  `fk_zip_code` int(10) UNSIGNED DEFAULT NULL,
   `carrier_phone` varchar(20) DEFAULT NULL,
   `carrier_rep` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -58,7 +59,8 @@ CREATE TABLE `category` (
 CREATE TABLE `company` (
   `comp_id` int(10) UNSIGNED NOT NULL,
   `comp_name` varchar(20) DEFAULT NULL,
-  `address` varchar(50) DEFAULT NULL,
+  `adr_street` varchar(30) DEFAULT NULL,
+  `fk_zip_code` int(10) UNSIGNED DEFAULT NULL,
   `representative` varchar(30) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `VAT_number` int(11) DEFAULT NULL
@@ -75,7 +77,8 @@ CREATE TABLE `customer` (
   `username` varchar(20) DEFAULT NULL,
   `first_name` varchar(20) DEFAULT NULL,
   `last_name` varchar(20) DEFAULT NULL,
-  `address` varchar(50) DEFAULT NULL,
+  `adr_street` varchar(30) DEFAULT NULL,
+  `fk_zip_code` int(10) UNSIGNED DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
   `age` int(3) DEFAULT NULL
@@ -181,6 +184,18 @@ CREATE TABLE `website` (
   `amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zip`
+--
+
+CREATE TABLE `zip` (
+  `zip_code` int(10) UNSIGNED NOT NULL,
+  `city` varchar(20) DEFAULT NULL,
+  `country` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -189,7 +204,8 @@ CREATE TABLE `website` (
 -- Indexes for table `carrier`
 --
 ALTER TABLE `carrier`
-  ADD PRIMARY KEY (`carrier_id`);
+  ADD PRIMARY KEY (`carrier_id`),
+  ADD KEY `fk_zip_code` (`fk_zip_code`);
 
 --
 -- Indexes for table `category`
@@ -201,13 +217,15 @@ ALTER TABLE `category`
 -- Indexes for table `company`
 --
 ALTER TABLE `company`
-  ADD PRIMARY KEY (`comp_id`);
+  ADD PRIMARY KEY (`comp_id`),
+  ADD KEY `fk_zip_code` (`fk_zip_code`);
 
 --
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `fk_zip_code` (`fk_zip_code`);
 
 --
 -- Indexes for table `login`
@@ -260,6 +278,12 @@ ALTER TABLE `website`
   ADD PRIMARY KEY (`cart_id`),
   ADD KEY `fk_login_id` (`fk_login_id`),
   ADD KEY `fk_product_id` (`fk_product_id`);
+
+--
+-- Indexes for table `zip`
+--
+ALTER TABLE `zip`
+  ADD PRIMARY KEY (`zip_code`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -334,6 +358,24 @@ ALTER TABLE `website`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `carrier`
+--
+ALTER TABLE `carrier`
+  ADD CONSTRAINT `carrier_ibfk_1` FOREIGN KEY (`fk_zip_code`) REFERENCES `zip` (`zip_code`);
+
+--
+-- Constraints for table `company`
+--
+ALTER TABLE `company`
+  ADD CONSTRAINT `company_ibfk_1` FOREIGN KEY (`fk_zip_code`) REFERENCES `zip` (`zip_code`);
+
+--
+-- Constraints for table `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`fk_zip_code`) REFERENCES `zip` (`zip_code`);
 
 --
 -- Constraints for table `login`
