@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2021 at 12:38 AM
+-- Generation Time: Apr 17, 2021 at 01:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -258,6 +258,32 @@ CREATE TABLE `product` (
   `stock` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `prod_name`, `price`, `fk_category_id`, `fk_comp_id`, `image`, `weight`, `stock`) VALUES
+(10102, 'IBM Workstation', 3900, 15, 12, '1DxcbuD37YsFfvgGYGRrKjPM8sAcD99dhb', 54, 162),
+(12247, 'Suitcase Set', 280, 13, 6, '18hUhqbMvFmXVf4Kcc44PQMfMVxbetex8b', 56, 736),
+(15319, 'Office Desk', 829, 10, 1, '1K8CqupaMB2JQFNfMCiWM7yv2maU5cNovV', 52, 974),
+(21369, 'Alienware Extreme', 4900, 8, 12, '12BZ8LESxy8msa5nbcuYJxUy65mF61MtxU', 41, 791),
+(25433, 'Lifetime Supply', 300, 5, 3, '1JWSgtThmi9mTrvqUBbJ87B4nes3ffABP', 22, 912),
+(27193, 'Final Fantasy Epic Edition', 199, 1, 15, '1PFdxZueUu55xe1sKiYQg5dYVrCR7q4ZA7', 7, 701),
+(32559, 'Table Soccer', 499, 1, 9, '15JjvTJqi9noCyoSgSmPtSnYUo9jTE55eG', 21, 764),
+(37419, 'Desktop Computer', 1999, 6, 20, '1CMokP5cCLKdMWUSQi5XuHghgQrFFim97k', 22, 657),
+(44767, 'Screw Driver Set', 19, 18, 12, '1AKRiM6aQzAv8G4c59FkxXDRZSYZyHUx4X', 4, 426),
+(53738, 'Terracotta Vase', 99, 10, 4, '1Pw88quMmM3zZBt7i1dzS2ro2e3JFJYUM', 22, 782),
+(64981, 'Small Freezer', 599, 11, 9, '1FAejTztJX6R1DibuwvrzGZW8gh7U6Fcmr', 65, 732),
+(67892, 'Filofax', 29, 15, 17, '1FDYApN5R16GgEjd26JRvkd6Ai9CFapbHj', 2, 706),
+(70433, 'Pottery Set', 99, 3, 11, '1PMuazbENroES6Wmz8DpUpM2sFN2cFVJxp', 39, 537),
+(70897, 'Mac Book Pro', 2490, 8, 17, '1C7B81bVJ7TTugT2uk6asrVrmPqb5TryuB', 6, 76),
+(81924, 'Trumpet', 1700, 14, 2, '15gk11pxpJFSRB2fEQ6dsKZFPeCdNpcTKj', 10, 982),
+(82064, 'Handwriting Set', 49, 16, 5, '12rdmdBJtAcC77TFjubUXmZcacUNd1rZ31', 2, 918),
+(86682, 'Encyclopedia Britannica', 699, 7, 2, '1DtbtebWvRstDvdUDecVV6jTDEZNjttvEo', 69, 514),
+(90515, 'Travel Bag Set', 240, 13, 15, '1PFGZiBt7yNg7oqLhJvucgwocGyEzuodpf', 20, 280),
+(95584, 'LED Rearlights', 499, 4, 16, '1BmvnhiGXFDsAMQX8PtPeNP9uakQBFrs66', 21, 265),
+(97379, 'Cat Playground', 749, 16, 17, '1M6QwvRTwWYViFwMD8DVMfYzdRyHA2ygvH', 76, 982);
+
 -- --------------------------------------------------------
 
 --
@@ -339,6 +365,32 @@ CREATE TABLE `website` (
   `fk_product_id` int(10) UNSIGNED DEFAULT NULL,
   `amount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `website`
+--
+
+INSERT INTO `website` (`cart_id`, `fk_login_id`, `fk_product_id`, `amount`) VALUES
+(12346, 10001, 97379, 14),
+(12347, 10002, 95584, 5),
+(12348, 10003, 90515, 16),
+(12349, 10004, 86682, 17),
+(12350, 10005, 82064, 8),
+(12351, 10006, 81924, 2),
+(12352, 10007, 70897, 18),
+(12353, 10008, 70433, 19),
+(12354, 10009, 67892, 7),
+(12355, 10010, 64981, 5),
+(12356, 10011, 53738, 17),
+(12357, 10012, 44767, 2),
+(12358, 10013, 37419, 7),
+(12359, 10014, 32559, 18),
+(12360, 10015, 27193, 17),
+(12361, 10016, 25433, 5),
+(12362, 10017, 21369, 6),
+(12363, 10018, 15319, 19),
+(12364, 10019, 12247, 6),
+(12365, 10020, 10102, 3);
 
 -- --------------------------------------------------------
 
@@ -511,7 +563,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99953;
 
 --
 -- AUTO_INCREMENT for table `purchase`
@@ -535,7 +587,7 @@ ALTER TABLE `user_pay`
 -- AUTO_INCREMENT for table `website`
 --
 ALTER TABLE `website`
-  MODIFY `cart_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12366;
 
 --
 -- Constraints for dumped tables
