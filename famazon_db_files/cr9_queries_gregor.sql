@@ -113,7 +113,7 @@ BETWEEN "2020-01-01" AND "2020-12-31"
 
 /*###############
 ### BONUS-Report:
-###    People get on our nerves. :D
+###    People in our department get on our nerves. :D
 ###    Instead, everyone now gets a table with all entries in the database. ;o)
 ###    That should keep them busy for a while. ^^ */
 

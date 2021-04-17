@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2021 at 11:45 AM
+-- Generation Time: Apr 17, 2021 at 12:09 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -167,50 +167,6 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`user_id`, `username`, `first_name`, `last_name`, `adr_street`, `fk_zip_code`, `email`, `phone`, `age`) VALUES
-(1, 'cbroker0', 'Chicky', 'Broker', '5734 Debs Way', 16853, 'cbroker0@comcast.net', '222-875-9477', 23),
-(2, 'linstrell1', 'Leopold', 'Instrell', '004 Anderson Plaza', 20172, 'linstrell1@issuu.com', '911-240-3136', 43),
-(3, 'ckurth2', 'Conrad', 'Kurth', '214 Fisk Lane', 20501, 'ckurth2@jimdo.com', '187-587-7167', 78),
-(4, 'dmuzzall3', 'Dorey', 'Muzzall', '228 Amoth Pass', 20560, 'dmuzzall3@fc2.com', '889-449-1083', 79),
-(5, 'ccollings4', 'Cloris', 'Collings', '8 Beilfuss Plaza', 22164, 'ccollings4@github.com', '173-664-5579', 58),
-(6, 'lmatashkin5', 'Luca', 'Matashkin', '302 Raven Alley', 22922, 'lmatashkin5@biglobe.ne.jp', '413-719-5566', 60),
-(7, 'fplatts6', 'Fredia', 'Platts', '6873 Rieder Court', 25155, 'fplatts6@delicious.com', '726-364-4099', 90),
-(8, 'khamel7', 'Kelby', 'Hamel', '7740 Meadow Valley Street', 28217, 'khamel7@cocolog-nifty.com', '764-405-6747', 25),
-(9, 'edibernardo8', 'Ericha', 'Di Bernardo', '7 Logan Center', 29193, 'edibernardo8@elegantthemes.com', '386-375-6034', 94),
-(10, 'tantonowicz9', 'Talbot', 'Antonowicz', '99 Wayridge Crossing', 37815, 'tantonowicz9@blinklist.com', '262-915-2256', 32),
-(11, 'mhodgesa', 'Marcella', 'Hodges', '80 Harper Plaza', 41722, 'mhodgesa@blogspot.com', '928-851-6577', 30),
-(12, 'egainsfordb', 'Ellissa', 'Gainsford', '18855 Eliot Trail', 45088, 'egainsfordb@spiegel.de', '891-361-1391', 42),
-(13, 'wnevinsc', 'Wolfy', 'Nevins', '92618 Reindahl Street', 51354, 'wnevinsc@irs.gov', '258-502-0720', 49),
-(14, 'aeglesed', 'Aubree', 'Eglese', '309 Village Junction', 53283, 'aeglesed@creativecommons.org', '607-189-6708', 52),
-(15, 'clinforde', 'Cedric', 'Linford', '782 Fisk Pass', 75218, 'clinforde@shutterfly.com', '954-677-8910', 88),
-(16, 'arawcliffef', 'Arlen', 'Rawcliffe', '3004 Columbus Park', 80913, 'arawcliffef@e-recht24.de', '440-658-5051', 45),
-(17, 'landriolettig', 'Leone', 'Andrioletti', '673 Eagle Crest Street', 83380, 'landriolettig@accuweather.com', '864-449-5434', 22),
-(18, 'cgaythwaiteh', 'Curtice', 'Gaythwaite', '670 Superior Center', 86522, 'cgaythwaiteh@oakley.com', '679-886-1289', 69),
-(19, 'dscoggansi', 'Darbie', 'Scoggans', '622 Redwing Court', 87241, 'dscoggansi@cafepress.com', '269-418-9526', 18),
-(20, 'emawmanj', 'Erskine', 'Mawman', '89 Kipling Terrace', 97209, 'emawmanj@imgur.com', '539-408-0232', 71);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `kljflkdsj`
---
-
-CREATE TABLE `kljflkdsj` (
-  `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
-  `username` varchar(20) DEFAULT NULL,
-  `first_name` varchar(20) DEFAULT NULL,
-  `last_name` varchar(20) DEFAULT NULL,
-  `adr_street` varchar(30) DEFAULT NULL,
-  `fk_zip_code` int(10) UNSIGNED DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `age` int(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `kljflkdsj`
---
-
-INSERT INTO `kljflkdsj` (`user_id`, `username`, `first_name`, `last_name`, `adr_street`, `fk_zip_code`, `email`, `phone`, `age`) VALUES
 (1, 'cbroker0', 'Chicky', 'Broker', '5734 Debs Way', 16853, 'cbroker0@comcast.net', '222-875-9477', 23),
 (2, 'linstrell1', 'Leopold', 'Instrell', '004 Anderson Plaza', 20172, 'linstrell1@issuu.com', '911-240-3136', 43),
 (3, 'ckurth2', 'Conrad', 'Kurth', '214 Fisk Lane', 20501, 'ckurth2@jimdo.com', '187-587-7167', 78),
