@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2021 at 01:57 AM
+-- Generation Time: Apr 17, 2021 at 02:58 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -241,6 +241,32 @@ CREATE TABLE `payment` (
   `pay_status` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`pay_id`, `fk_order_id`, `invoice_date`, `invoice_type`, `invoice_sum`, `pay_status`) VALUES
+(91235, 76544, '2020-07-25', 'post', 0, 0),
+(91236, 76545, '2020-06-09', 'email', 0, 0),
+(91237, 76546, '2021-01-10', 'pigeon', 0, 0),
+(91238, 76547, '2021-03-24', 'post', 0, 1),
+(91239, 76548, '2020-11-09', 'email', 0, 0),
+(91240, 76549, '2021-02-07', 'email', 0, 1),
+(91241, 76550, '2020-07-02', 'pigeon', 0, 1),
+(91242, 76551, '2021-04-01', 'email', 0, 1),
+(91243, 76552, '2021-02-07', 'post', 0, 1),
+(91244, 76553, '2021-02-20', 'email', 0, 1),
+(91245, 76554, '2021-01-12', 'email', 0, 0),
+(91246, 76555, '2021-01-17', 'pigeon', 0, 1),
+(91247, 76556, '2020-06-28', 'post', 0, 0),
+(91248, 76557, '2020-12-31', 'email', 0, 1),
+(91249, 76558, '2020-07-01', 'post', 0, 1),
+(91250, 76559, '2021-02-07', 'email', 0, 1),
+(91251, 76560, '2020-05-12', 'pigeon', 0, 0),
+(91252, 76561, '2021-03-12', 'email', 0, 1),
+(91253, 76562, '2020-07-30', 'email', 0, 0),
+(91254, 76563, '2020-07-06', 'email', 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -294,9 +320,35 @@ CREATE TABLE `purchase` (
   `order_id` int(10) UNSIGNED NOT NULL,
   `fk_cart_id` int(10) UNSIGNED DEFAULT NULL,
   `order_date` date DEFAULT NULL,
-  `order_status` varchar(20) DEFAULT NULL,
+  `order_status` tinyint(1) DEFAULT NULL,
   `order_comment` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `purchase`
+--
+
+INSERT INTO `purchase` (`order_id`, `fk_cart_id`, `order_date`, `order_status`, `order_comment`) VALUES
+(76544, 12346, '2020-08-01', 0, 'scelerisque mauris sit amet eros suspendisse accum'),
+(76545, 12347, '2020-08-19', 1, 'viverra eget congue eget semper rutrum nulla'),
+(76546, 12348, '2020-08-15', 0, 'quam nec dui luctus rutrum nulla tellus'),
+(76547, 12349, '2020-08-18', 0, 'id pretium iaculis diam erat fermentum justo nec c'),
+(76548, 12350, '2021-04-14', 0, 'faucibus orci luctus et ultrices posuere cubilia'),
+(76549, 12351, '2021-03-17', 0, 'donec ut dolor morbi vel lectus'),
+(76550, 12352, '2020-05-10', 1, 'felis ut at dolor quis odio'),
+(76551, 12353, '2020-09-13', 1, 'accumsan felis ut at dolor'),
+(76552, 12354, '2021-01-02', 1, 'pede justo eu massa donec'),
+(76553, 12355, '2020-09-20', 1, 'donec vitae nisi nam ultrices libero non mattis pu'),
+(76554, 12356, '2020-04-19', 1, 'ac neque duis bibendum morbi non'),
+(76555, 12357, '2020-11-10', 1, 'integer non velit donec diam neque vestibulum eget'),
+(76556, 12358, '2021-03-19', 0, 'nec molestie sed justo pellentesque viverra pede a'),
+(76557, 12359, '2020-09-24', 1, 'at nulla suspendisse potenti cras in purus eu magn'),
+(76558, 12360, '2021-01-10', 1, 'cubilia curae duis faucibus accumsan odio curabitu'),
+(76559, 12361, '2020-08-13', 0, 'suscipit a feugiat et eros vestibulum ac est lacin'),
+(76560, 12362, '2020-06-22', 1, 'diam neque vestibulum eget vulputate'),
+(76561, 12363, '2021-03-14', 1, 'cras mi pede malesuada in imperdiet et commodo vul'),
+(76562, 12364, '2021-04-05', 0, 'porttitor lacus at turpis donec posuere'),
+(76563, 12365, '2020-10-24', 1, 'semper sapien a libero nam dui');
 
 -- --------------------------------------------------------
 
@@ -312,6 +364,32 @@ CREATE TABLE `shipping` (
   `fk_carrier_id` int(10) UNSIGNED DEFAULT NULL,
   `insurance` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shipping`
+--
+
+INSERT INTO `shipping` (`shipping_id`, `fk_order_id`, `ship_date`, `transportation`, `fk_carrier_id`, `insurance`) VALUES
+(81235, 76544, '2020-08-14', 'land', 19, 0),
+(81236, 76545, '2021-02-12', 'air', 10, 1),
+(81237, 76546, '2021-03-24', 'sea', 2, 1),
+(81238, 76547, '2020-12-21', 'land', 6, 1),
+(81239, 76548, '2021-03-07', 'land', 2, 1),
+(81240, 76549, '2021-01-11', 'land', 19, 1),
+(81241, 76550, '2020-10-30', 'air', 15, 1),
+(81242, 76551, '2020-10-26', 'air', 19, 1),
+(81243, 76552, '2021-03-30', 'air', 9, 1),
+(81244, 76553, '2020-05-05', 'land', 16, 0),
+(81245, 76554, '2021-02-13', 'sea', 1, 0),
+(81246, 76555, '2020-09-30', 'land', 18, 1),
+(81247, 76556, '2021-03-17', 'air', 20, 1),
+(81248, 76557, '2020-10-27', 'land', 17, 1),
+(81249, 76558, '2020-07-27', 'land', 18, 0),
+(81250, 76559, '2021-02-11', 'air', 6, 1),
+(81251, 76560, '2021-03-28', 'sea', 10, 1),
+(81252, 76561, '2020-04-26', 'land', 10, 0),
+(81253, 76562, '2020-07-11', 'land', 3, 0),
+(81254, 76563, '2021-03-06', 'air', 20, 0);
 
 -- --------------------------------------------------------
 
@@ -557,7 +635,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `pay_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `pay_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91255;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -566,16 +644,10 @@ ALTER TABLE `product`
   MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99953;
 
 --
--- AUTO_INCREMENT for table `purchase`
---
-ALTER TABLE `purchase`
-  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `shipping`
 --
 ALTER TABLE `shipping`
-  MODIFY `shipping_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `shipping_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81255;
 
 --
 -- AUTO_INCREMENT for table `user_pay`
