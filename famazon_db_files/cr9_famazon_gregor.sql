@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2021 at 02:58 AM
+-- Generation Time: Apr 17, 2021 at 11:45 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -191,6 +191,50 @@ INSERT INTO `customer` (`user_id`, `username`, `first_name`, `last_name`, `adr_s
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kljflkdsj`
+--
+
+CREATE TABLE `kljflkdsj` (
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `username` varchar(20) DEFAULT NULL,
+  `first_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(20) DEFAULT NULL,
+  `adr_street` varchar(30) DEFAULT NULL,
+  `fk_zip_code` int(10) UNSIGNED DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `age` int(3) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kljflkdsj`
+--
+
+INSERT INTO `kljflkdsj` (`user_id`, `username`, `first_name`, `last_name`, `adr_street`, `fk_zip_code`, `email`, `phone`, `age`) VALUES
+(1, 'cbroker0', 'Chicky', 'Broker', '5734 Debs Way', 16853, 'cbroker0@comcast.net', '222-875-9477', 23),
+(2, 'linstrell1', 'Leopold', 'Instrell', '004 Anderson Plaza', 20172, 'linstrell1@issuu.com', '911-240-3136', 43),
+(3, 'ckurth2', 'Conrad', 'Kurth', '214 Fisk Lane', 20501, 'ckurth2@jimdo.com', '187-587-7167', 78),
+(4, 'dmuzzall3', 'Dorey', 'Muzzall', '228 Amoth Pass', 20560, 'dmuzzall3@fc2.com', '889-449-1083', 79),
+(5, 'ccollings4', 'Cloris', 'Collings', '8 Beilfuss Plaza', 22164, 'ccollings4@github.com', '173-664-5579', 58),
+(6, 'lmatashkin5', 'Luca', 'Matashkin', '302 Raven Alley', 22922, 'lmatashkin5@biglobe.ne.jp', '413-719-5566', 60),
+(7, 'fplatts6', 'Fredia', 'Platts', '6873 Rieder Court', 25155, 'fplatts6@delicious.com', '726-364-4099', 90),
+(8, 'khamel7', 'Kelby', 'Hamel', '7740 Meadow Valley Street', 28217, 'khamel7@cocolog-nifty.com', '764-405-6747', 25),
+(9, 'edibernardo8', 'Ericha', 'Di Bernardo', '7 Logan Center', 29193, 'edibernardo8@elegantthemes.com', '386-375-6034', 94),
+(10, 'tantonowicz9', 'Talbot', 'Antonowicz', '99 Wayridge Crossing', 37815, 'tantonowicz9@blinklist.com', '262-915-2256', 32),
+(11, 'mhodgesa', 'Marcella', 'Hodges', '80 Harper Plaza', 41722, 'mhodgesa@blogspot.com', '928-851-6577', 30),
+(12, 'egainsfordb', 'Ellissa', 'Gainsford', '18855 Eliot Trail', 45088, 'egainsfordb@spiegel.de', '891-361-1391', 42),
+(13, 'wnevinsc', 'Wolfy', 'Nevins', '92618 Reindahl Street', 51354, 'wnevinsc@irs.gov', '258-502-0720', 49),
+(14, 'aeglesed', 'Aubree', 'Eglese', '309 Village Junction', 53283, 'aeglesed@creativecommons.org', '607-189-6708', 52),
+(15, 'clinforde', 'Cedric', 'Linford', '782 Fisk Pass', 75218, 'clinforde@shutterfly.com', '954-677-8910', 88),
+(16, 'arawcliffef', 'Arlen', 'Rawcliffe', '3004 Columbus Park', 80913, 'arawcliffef@e-recht24.de', '440-658-5051', 45),
+(17, 'landriolettig', 'Leone', 'Andrioletti', '673 Eagle Crest Street', 83380, 'landriolettig@accuweather.com', '864-449-5434', 22),
+(18, 'cgaythwaiteh', 'Curtice', 'Gaythwaite', '670 Superior Center', 86522, 'cgaythwaiteh@oakley.com', '679-886-1289', 69),
+(19, 'dscoggansi', 'Darbie', 'Scoggans', '622 Redwing Court', 87241, 'dscoggansi@cafepress.com', '269-418-9526', 18),
+(20, 'emawmanj', 'Erskine', 'Mawman', '89 Kipling Terrace', 97209, 'emawmanj@imgur.com', '539-408-0232', 71);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -246,26 +290,26 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`pay_id`, `fk_order_id`, `invoice_date`, `invoice_type`, `invoice_sum`, `pay_status`) VALUES
-(91235, 76544, '2020-07-25', 'post', 0, 0),
-(91236, 76545, '2020-06-09', 'email', 0, 0),
-(91237, 76546, '2021-01-10', 'pigeon', 0, 0),
-(91238, 76547, '2021-03-24', 'post', 0, 1),
-(91239, 76548, '2020-11-09', 'email', 0, 0),
-(91240, 76549, '2021-02-07', 'email', 0, 1),
-(91241, 76550, '2020-07-02', 'pigeon', 0, 1),
-(91242, 76551, '2021-04-01', 'email', 0, 1),
-(91243, 76552, '2021-02-07', 'post', 0, 1),
-(91244, 76553, '2021-02-20', 'email', 0, 1),
-(91245, 76554, '2021-01-12', 'email', 0, 0),
-(91246, 76555, '2021-01-17', 'pigeon', 0, 1),
-(91247, 76556, '2020-06-28', 'post', 0, 0),
-(91248, 76557, '2020-12-31', 'email', 0, 1),
-(91249, 76558, '2020-07-01', 'post', 0, 1),
-(91250, 76559, '2021-02-07', 'email', 0, 1),
-(91251, 76560, '2020-05-12', 'pigeon', 0, 0),
-(91252, 76561, '2021-03-12', 'email', 0, 1),
-(91253, 76562, '2020-07-30', 'email', 0, 0),
-(91254, 76563, '2020-07-06', 'email', 0, 0);
+(91235, 76544, '2020-07-25', 'post', 10486, 0),
+(91236, 76545, '2020-06-09', 'email', 2495, 0),
+(91237, 76546, '2021-01-10', 'pigeon', 3840, 0),
+(91238, 76547, '2021-03-24', 'post', 11883, 1),
+(91239, 76548, '2020-11-09', 'email', 392, 0),
+(91240, 76549, '2021-02-07', 'email', 3400, 1),
+(91241, 76550, '2020-07-02', 'pigeon', 44820, 1),
+(91242, 76551, '2021-04-01', 'email', 1881, 1),
+(91243, 76552, '2021-02-07', 'post', 203, 1),
+(91244, 76553, '2021-02-20', 'email', 2995, 1),
+(91245, 76554, '2021-01-12', 'email', 1683, 0),
+(91246, 76555, '2021-01-17', 'pigeon', 38, 1),
+(91247, 76556, '2020-06-28', 'post', 13993, 0),
+(91248, 76557, '2020-12-31', 'email', 8982, 1),
+(91249, 76558, '2020-07-01', 'post', 3383, 1),
+(91250, 76559, '2021-02-07', 'email', 1500, 1),
+(91251, 76560, '2020-05-12', 'pigeon', 29400, 0),
+(91252, 76561, '2021-03-12', 'email', 15751, 1),
+(91253, 76562, '2020-07-30', 'email', 1680, 0),
+(91254, 76563, '2020-07-06', 'email', 11700, 0);
 
 -- --------------------------------------------------------
 
@@ -293,7 +337,7 @@ INSERT INTO `product` (`product_id`, `prod_name`, `price`, `fk_category_id`, `fk
 (12247, 'Suitcase Set', 280, 13, 6, '18hUhqbMvFmXVf4Kcc44PQMfMVxbetex8b', 56, 736),
 (15319, 'Office Desk', 829, 10, 1, '1K8CqupaMB2JQFNfMCiWM7yv2maU5cNovV', 52, 974),
 (21369, 'Alienware Extreme', 4900, 8, 12, '12BZ8LESxy8msa5nbcuYJxUy65mF61MtxU', 41, 791),
-(25433, 'Lifetime Supply', 300, 5, 3, '1JWSgtThmi9mTrvqUBbJ87B4nes3ffABP', 22, 912),
+(25433, 'Beauty Case', 300, 5, 3, '1JWSgtThmi9mTrvqUBbJ87B4nes3ffABP', 2, 912),
 (27193, 'Final Fantasy Epic Edition', 199, 1, 15, '1PFdxZueUu55xe1sKiYQg5dYVrCR7q4ZA7', 7, 701),
 (32559, 'Table Soccer', 499, 1, 9, '15JjvTJqi9noCyoSgSmPtSnYUo9jTE55eG', 21, 764),
 (37419, 'Desktop Computer', 1999, 6, 20, '1CMokP5cCLKdMWUSQi5XuHghgQrFFim97k', 22, 657),
@@ -334,7 +378,7 @@ INSERT INTO `purchase` (`order_id`, `fk_cart_id`, `order_date`, `order_status`, 
 (76546, 12348, '2020-08-15', 0, 'quam nec dui luctus rutrum nulla tellus'),
 (76547, 12349, '2020-08-18', 0, 'id pretium iaculis diam erat fermentum justo nec c'),
 (76548, 12350, '2021-04-14', 0, 'faucibus orci luctus et ultrices posuere cubilia'),
-(76549, 12351, '2021-03-17', 0, 'donec ut dolor morbi vel lectus'),
+(76549, 12351, '2020-04-19', 0, 'donec ut dolor morbi vel lectus'),
 (76550, 12352, '2020-05-10', 1, 'felis ut at dolor quis odio'),
 (76551, 12353, '2020-09-13', 1, 'accumsan felis ut at dolor'),
 (76552, 12354, '2021-01-02', 1, 'pede justo eu massa donec'),

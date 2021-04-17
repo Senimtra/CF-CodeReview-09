@@ -111,3 +111,23 @@ BETWEEN "2020-01-01" AND "2020-12-31"
     AND age < 50;
 
 
+/*###############
+### BONUS-Report:
+###    People get on our nerves. :D
+###    Instead, everyone now gets a table with all entries in the database. ;o)
+###    That should keep them busy for a while. ^^ */
+
+SELECT customer.*, zip.*, user_pay.*, login.*, website.*, purchase.*,
+    payment.*, product.*, category.*, shipping.*, company.*, carrier.*
+FROM customer
+    INNER JOIN zip ON zip_code = fk_zip_code
+    INNER JOIN user_pay ON user_id = fk_user_id
+    INNER JOIN login ON user_id = login.fk_user_id
+    INNER JOIN website ON login_id = fk_login_id
+    INNER JOIN purchase ON cart_id = fk_cart_id
+    INNER JOIN payment ON order_id = fk_order_id
+    INNER JOIN product ON product_id = fk_product_id
+    INNER JOIN category ON category_id = fk_category_id
+    INNER JOIN shipping ON order_id = shipping.fk_order_id
+    INNER JOIN company ON comp_id = fk_comp_id
+    INNER JOIN carrier ON carrier_id = fk_carrier_id;
