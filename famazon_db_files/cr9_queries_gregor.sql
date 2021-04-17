@@ -111,11 +111,10 @@ BETWEEN "2020-01-01" AND "2020-12-31"
     AND age < 50;
 
 
-/*###############
-### BONUS-Report:
-###    People in our department get on our nerves. :D
-###    Instead, everyone now gets a table with all entries in the database. ;o)
-###    That should keep them busy for a while. ^^ */
+/*############
+### 7. Report:
+###    Putting all data stored in the database into one query.
+###    -> joining all tables of the database -> result */
 
 SELECT customer.*, zip.*, user_pay.*, login.*, website.*, purchase.*,
     payment.*, product.*, category.*, shipping.*, company.*, carrier.*
@@ -131,3 +130,4 @@ FROM customer
     INNER JOIN shipping ON order_id = shipping.fk_order_id
     INNER JOIN company ON comp_id = fk_comp_id
     INNER JOIN carrier ON carrier_id = fk_carrier_id;
+    
