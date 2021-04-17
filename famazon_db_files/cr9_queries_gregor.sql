@@ -46,8 +46,8 @@ FROM product
     ON cart_id = fk_cart_id
     INNER JOIN shipping
     ON order_id = fk_order_id
-WHERE ship_date > "2020-12-31"
-    AND ship_date < "2021-04-01"
+WHERE ship_date
+BETWEEN "2021-01-01" AND "2021-03-31"
 ORDER BY ship_date;
 
 
@@ -70,3 +70,44 @@ FROM product
     INNER JOIN zip
     ON zip_code = fk_zip_code
 WHERE city = "Yangba";
+
+
+/*############
+### 5. Report:
+###    What is the average age of all customers who bought in 2020?
+###    -> average age in 2020 -> 49.4 years */
+
+SELECT CONCAT("customers in 2020 was ", ROUND(AVG(age),1), " years.")
+AS "The average age of all of our .."
+FROM purchase
+    INNER JOIN website
+    ON cart_id = fk_cart_id
+    INNER JOIN login
+    ON login_id = fk_login_id
+    INNER JOIN customer
+    ON user_id = fk_user_id
+WHERE order_date
+BETWEEN "2020-01-01" AND "2020-12-31";
+
+
+/*############
+### 6. Report:
+###    What is the total sum of all purchases in 2020 that were done by customers below 50 years of age?
+###    -> purchases by people younger than 50 years in 2020 -> total sum 50.478 EUR */
+
+SELECT CONCAT("done by customers younger than 50 years: ", SUM(invoice_sum), " EUR")
+AS "Total sum of purchases in 2020 .."
+FROM customer
+    INNER JOIN login
+    ON user_id = fk_user_id
+    INNER JOIN website
+    ON login_id = fk_login_id
+    INNER JOIN purchase
+    ON cart_id = fk_cart_id
+    INNER JOIN payment
+    ON order_id = fk_order_id
+WHERE order_date
+BETWEEN "2020-01-01" AND "2020-12-31"
+    AND age < 50;
+
+
